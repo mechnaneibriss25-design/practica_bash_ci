@@ -1,0 +1,19 @@
+name: Ejucutar Bash
+
+on: 
+  push:
+    branshes: [main]
+
+jobs:
+  ejecutar:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Descargar repositorio
+      - uses: actions/checkout@v4
+      
+      - name: Dar permisos 
+        run: chmod +x src/saludos.sh
+        
+      - name: Ejecutar script
+        run: ./src/saludo.sh
