@@ -17,3 +17,9 @@ jobs:
         
       - name: Ejecutar script
         run: ./src/saludo.sh
+        
+      - name: Mostrar fecha
+        run: date
+        
+      - name: Mostrar mensaje
+        run: echo "Comenzando la ejecución"
