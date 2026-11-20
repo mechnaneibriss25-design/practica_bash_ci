@@ -15,6 +15,18 @@ jobs:
       - name: Dar permisos 
         run: chmod +x src/saludo.sh
         
+      - name: crear carpeta backup
+        run: mkdir -p backup
+        
+      - name: crear zip comprimido
+        run: zip -r backup/backup_datos.zip datos
+        
+       - name: subir artefacto
+         uses: actions/upload-artifact@v4
+         with: 
+           name: backup-datos
+           path: backup/backup_datos.zip
+               
       - name: Ejecutar script
         run: ./src/saludo.sh
         
