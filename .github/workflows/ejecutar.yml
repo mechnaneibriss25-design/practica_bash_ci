@@ -2,7 +2,7 @@ name: Ejucutar Bash
 
 on: 
   push:
-    branshes: [main]
+    branches: [main]
 
 jobs:
   ejecutar:
@@ -21,9 +21,9 @@ jobs:
       - name: crear zip comprimido
         run: zip -r backup/backup_datos.zip datos
         
-       - name: subir artefacto
-         uses: actions/upload-artifact@v4
-         with: 
+      - name: subir artefacto
+        uses: actions/upload-artifact@v4
+        with: 
             name: backup-datos
             path: backup/backup_datos.zip
                
